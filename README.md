@@ -1,6 +1,9 @@
 # Org + Noosphere
 This intends to provide tools to build out a workflow to write notes in org-mode, but serialize them out to [Noosphere](https://github.com/subconsciousnetwork/noosphere).
 
+## Installation
+Clone the git repo.
+Get [org-to-subtext](https://github.com/justinabrahms/org-roam-to-subtext) on your path.
 
 ## Usage
 
