@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-mkdir -p /tmp/org-symlinks
+. "$SCRIPT_DIR"/env
+mkdir -p $SYMLINK_DIR
 
-for i in $(find ~/Dropbox/docs/roam/ -maxdepth 1 -name "*.org"); do
-    ln -s "$i" "$(echo "$i" | sed -Ee 's,.*roam/[[:digit:]]+-,/tmp/org-symlinks/,g')" 2>/dev/null
+for i in $(find "$ORG_ROAM_DIR" -maxdepth 1 -name "*.org"); do
+    ln -s "$i" "$(echo "$i" | sed -Ee "s,.*roam/[[:digit:]]+-,$SYMLINK_DIR/,g")" 2>/dev/null
 done
