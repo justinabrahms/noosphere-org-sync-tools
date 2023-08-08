@@ -8,7 +8,7 @@ WITHOUT_QUOTES=$(echo "$SHARE_FILES" | tr '"' ' ')
 for f in $WITHOUT_QUOTES; do
     "$SCRIPT_DIR"/migrate.sh "$f"
 done
-
+printf "Rendered $(echo "$SHARE_FILES" | wc -l) notes.\n\n"
 
 # missing links
 echo "Here are the broken links in your sphere (e.g. not yet marked as shared):"
