@@ -8,6 +8,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 . "$SCRIPT_DIR"/env
 
 NAME=$(basename "$FILE")
-NEW_NAME=$(echo "$NAME" | tr "_" "-")
+
+NEW_NAME=$(echo "$NAME" | sed -e 's/_/-/g' -e 's/^[[:digit:]]*-//')
 
 DATABASE_URL="sqlite:$ORG_ROAM_DB_LOCATION" org-to-subtext $DEBUG_FLAG --filename "$FILE" -o "${NEW_NAME//org/subtext}"
