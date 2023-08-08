@@ -11,12 +11,13 @@ Get [org-to-subtext](https://github.com/justinabrahms/org-roam-to-subtext) on yo
 # Fill out env based on your setup
 cp env.sample env
 
-# Symlink your date-oriented org files to exclude dates (nicer for tab complete)
-build-symlinks.sh /path/to/org/roam/files
 
-# Add files you want to keep track of to the registry file
-add-to-registry.sh /tmp/org-symlinks/mynote.org
+# Add the "share" tag to any of your files you want to render out. using `org-roam-tag-add`
 
-# sync the files into your current noosphere directory (this generates .subtext files)
+# Render out the files into your current directory (this generates .subtext files)
 org-sync.sh
+
+# save & sync
+orb sphere save
+orb sphere sync
 ```
